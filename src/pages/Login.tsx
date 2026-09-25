@@ -28,9 +28,49 @@ export default function Login() {
   }
 
   return (
-    <div className="min-h-screen flex" style={{ background: 'linear-gradient(135deg, #F7FFF9 0%, #ECFBF3 100%)' }}>
-      {/* LEFT SIDE - Illustration (40%) */}
-      <div className="hidden lg:flex lg:w-[40%] relative overflow-hidden items-center justify-center p-12">
+    <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, #F7FFF9 0%, #ECFBF3 100%)' }}>
+      {/* NAVBAR */}
+      <nav className="border-b border-gray-200/50 bg-white/70 backdrop-blur-md">
+        <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 py-4">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <Link to="/" className="flex items-center gap-3 group">
+              <Logo />
+            </Link>
+
+            {/* Navigation Links */}
+            <div className="hidden md:flex items-center gap-8">
+              <Link to="/" className="text-gray-600 hover:text-green-600 font-medium transition-colors">
+                Accueil
+              </Link>
+              <Link to="/courses" className="text-gray-600 hover:text-green-600 font-medium transition-colors">
+                Cours
+              </Link>
+              <Link to="/about" className="text-gray-600 hover:text-green-600 font-medium transition-colors">
+                À propos
+              </Link>
+              <Link to="/contact" className="text-gray-600 hover:text-green-600 font-medium transition-colors">
+                Contact
+              </Link>
+            </div>
+
+            {/* Right Side - Register Link */}
+            <div className="flex items-center gap-4">
+              <Link 
+                to="/register"
+                className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300"
+              >
+                S'inscrire
+              </Link>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* MAIN CONTENT */}
+      <div className="flex min-h-[calc(100vh-73px)]">
+        {/* LEFT SIDE - Illustration (40%) */}
+        <div className="hidden lg:flex lg:w-[40%] relative overflow-hidden items-center justify-center p-12">
         {/* Decorative Background Elements */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute -top-32 -left-32 w-96 h-96 bg-green-100/40 rounded-full blur-3xl"></div>
@@ -235,6 +275,7 @@ export default function Login() {
           <div className="absolute -top-6 -right-6 w-12 h-12 bg-yellow-400/60 rounded-full blur-lg animate-pulse"></div>
           <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-green-400/40 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
         </div>
+      </div>
       </div>
 
       {/* CSS for animations */}
