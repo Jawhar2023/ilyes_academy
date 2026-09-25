@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { LogIn, Eye, EyeOff, Mail, Lock } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
 import Logo from '../components/Logo'
+import Navbar from '../components/Navbar'
 
 export default function Login() {
   const { signIn } = useAuth()
@@ -29,46 +30,11 @@ export default function Login() {
 
   return (
     <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, #F7FFF9 0%, #ECFBF3 100%)' }}>
-      {/* NAVBAR */}
-      <nav className="border-b border-gray-200/50 bg-white/70 backdrop-blur-md">
-        <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 py-4">
-          <div className="flex items-center justify-between">
-            {/* Logo */}
-            <Link to="/" className="flex items-center gap-3 group">
-              <Logo />
-            </Link>
-
-            {/* Navigation Links */}
-            <div className="hidden md:flex items-center gap-8">
-              <Link to="/" className="text-gray-600 hover:text-green-600 font-medium transition-colors">
-                Accueil
-              </Link>
-              <Link to="/courses" className="text-gray-600 hover:text-green-600 font-medium transition-colors">
-                Cours
-              </Link>
-              <Link to="/about" className="text-gray-600 hover:text-green-600 font-medium transition-colors">
-                À propos
-              </Link>
-              <Link to="/contact" className="text-gray-600 hover:text-green-600 font-medium transition-colors">
-                Contact
-              </Link>
-            </div>
-
-            {/* Right Side - Register Link */}
-            <div className="flex items-center gap-4">
-              <Link 
-                to="/register"
-                className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300"
-              >
-                S'inscrire
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
+      {/* NAVBAR - Using the same navbar component as index */}
+      <Navbar />
 
       {/* MAIN CONTENT */}
-      <div className="flex min-h-[calc(100vh-73px)]">
+      <div className="flex min-h-[calc(100vh-200px)]">
         {/* LEFT SIDE - Illustration (40%) */}
         <div className="hidden lg:flex lg:w-[40%] relative overflow-hidden items-center justify-center p-12">
         {/* Decorative Background Elements */}
